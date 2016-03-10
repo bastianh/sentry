@@ -29,6 +29,8 @@ www:
     - data
   entrypoint: sentry
   command: start --noinput
-  env_file:
-    - secrets/environment.sh
+  environment:
+    SECRET_KEY: nosecret
+    SERVER_EMAIL: server@example.com
+    SENTRY_URL_PREFIX: http://localhost:8080/
   restart: always
